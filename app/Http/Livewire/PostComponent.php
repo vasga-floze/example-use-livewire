@@ -14,6 +14,10 @@ class PostComponent extends Component
     //usar la clase de paginación
     use WithPagination;
 
+    /*se habilita el tema de bootstrap para la paginacion, ya que por default
+     toma los estilos de paginacion de Tailwind */ 
+    protected $paginationTheme = 'bootstrap';
+    
     public function render()
     {
         
