@@ -24,7 +24,7 @@ class PostFactory extends Factory
         return [
             //definir estructura de datos falsos a insertar
             'title'=>$this->faker->sentence,
-            'body'=>$this->faker->slug,
+            'body'=>$this->faker->text,
         ];
     }
 }
