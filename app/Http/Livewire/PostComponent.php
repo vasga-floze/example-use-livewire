@@ -19,7 +19,7 @@ class PostComponent extends Component
     protected $paginationTheme = 'bootstrap';
 
     //propiedades que serviran para conectar desde los wire
-    public $title, $body;
+    public $post_id, $title, $body;
 
     //variable que indica la vista que se va a pasar al componente 
     public $view = 'create';
@@ -56,6 +56,7 @@ class PostComponent extends Component
 
        $post = Post::find($id);
 
+       $this->post_id = $post->id;
        $this->title = $post->title;
        $this->body = $post->body;
 
@@ -63,6 +64,23 @@ class PostComponent extends Component
        $this->view = 'edit';
     }
 
+    //Método actualizar
+    public function update(){
+
+        //validar que title y body tengan contenido
+        $this->validate(['title'=> 'required', 'body' => 'required']);
+
+        //cobtiene el id y lo almacena en la variable
+        $post = Post::find($this->post_id);
+
+        $post->update([
+            'title' => $this->title,
+            'body'  => $this->body
+        ]);
+
+        //una vez actualizado el formulario vuelve a la normalidad, con el metodo creado como default
+        $this->default();
+    }
 
     //Método eliminar
     public function destroy($id){
