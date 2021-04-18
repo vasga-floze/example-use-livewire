@@ -26,4 +26,9 @@ class PostComponent extends Component
 
         ]);
     }
+
+    public function destroy($id){
+
+        Post::destroy($id);
+    }
 }

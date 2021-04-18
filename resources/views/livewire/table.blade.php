@@ -21,7 +21,9 @@
                 </button>
             </td>
             <td>
-                <button class="btn btn-danger">
+                <!--Agregar atributo propio del componente: wire y luego el evento: click 
+                luego se llama al método destroy y dentro que reciba el id, porque ya tenemos la variable post-->
+                <button wire:click="destroy({{ $post->id }})" class="btn btn-danger">
                     Eliminar
                 </button>
             </td>
