@@ -40,14 +40,14 @@ class PostComponent extends Component
         $this->validate(['title'=> 'required', 'body' => 'required']);
 
         //si la validacion anterior es true, se ejecuta el método create
-        Post::create([
+        $post = Post::create([
 
             'title' => $this->title,
             'body' => $this->body
         ]);
 
-        //al ingresar un nuevo post, los input se limpian
-        $this->reset(['title', 'body']);
+        //que se ejecute el metodo edit para que de una vez se guarde permita hacer una actualizacion
+        $this->edit($post->id);
 
     }
 
