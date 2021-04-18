@@ -46,12 +46,35 @@ class PostComponent extends Component
             'body' => $this->body
         ]);
 
+        //al ingresar un nuevo post, los input se limpian
         $this->reset(['title', 'body']);
 
     }
 
+    //Método editar (pasar al formulario los datos)
+    public function edit($id){
+
+       $post = Post::find($id);
+
+       $this->title = $post->title;
+       $this->body = $post->body;
+
+       //cambiar en la propiedad, la vista que se va a mostrar 
+       $this->view = 'edit';
+    }
+
+
+    //Método eliminar
     public function destroy($id){
 
         Post::destroy($id);
+    }
+
+    //Método que va a mostrar el estado inicial de la vista y va a limpiar los campos
+    public function default(){
+        $this->title = '';
+        $this->body = '';
+
+        $this->view = 'create';
     }
 }
