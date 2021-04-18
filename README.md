@@ -7,6 +7,15 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## EJECUTAR ESTA APLICACION POR PRIMERA VEZ
+- Agregar la base de datos en el archivo de configuración .env.
+- Ejecutar las migraciones con el comando: php artisan migrate.
+- Instalar los paquetes de composer con el comando: composer install.
+- Instalar los paquetes de node con el comando: npm install.
+- Crear los datos falsos en la tabla existente con el comando: php artisan migrate:refresh --seed.
+- Para agrupar los scripts a través del módulo Laravel Mix con el comando: npm run dev.
+- Ahora solo resta levantar el servidor de artisan con el comando: php artisan serve.
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
